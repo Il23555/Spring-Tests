@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Spring Security Example </title>
+    <meta charset="utf-8">
+    <title>Sign In </title>
 </head>
 <body>
-Login page
+<p><img src="src/main/resources/templates/message.jpg" width="189" height="255" alt="lorem"></p>
+<p>Login page</p>
 <form action="/login" method="post">
-    <div><label> User Name : <input type="text" name="username"/> </label></div>
-    <div><label> Password: <input type="password" name="password"/> </label></div>
+    <div><label> User Name : <input type="text" id="username" name="username"/> </label></div>
+    <div><label> Password: <input type="password" id="password" name="password"/> </label></div>
     <input type="hidden" name="_csrf" value="{{_csrf.token}}" />
-    <div><input type="submit" value="Sign In"/></div>
+    <div><input type="submit" id="SignIn" value="Sign In"/></div>
 </form>
 <p><a href="/registration">Sign Up</a></p>
 </body>

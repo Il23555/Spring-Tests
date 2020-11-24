@@ -2,8 +2,8 @@ package com.example.sweater.controller;
 
 import com.example.sweater.domain.User;
 
-import org.junit.jupiter.api.Test;
 import org.junit.Assert;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -27,7 +27,7 @@ class RegistrationControllerTest {
         Assert.assertEquals("User exists!", model.get("message"));
 
         User user2 = new User();
-        user2.setUsername("maria");
+        user2.setUsername("Zhenya");
         user2.setPassword("u8956789");
         Assert.assertEquals("redirect:/login", registrationController.addUser(user2, model));
 
@@ -41,10 +41,11 @@ class RegistrationControllerTest {
         Assert.assertTrue(registrationController.isValidPassword("aaaabbbcc"));
     }
 
+
     @Test
     void isValidLogin() {
         RegistrationController registrationController = new RegistrationController();
         Assert.assertFalse(registrationController.isValidLogin("12"));
-        Assert.assertTrue(registrationController.isValidLogin("john"));
+        Assert.assertTrue(registrationController.isValidLogin("John"));
     }
 }
